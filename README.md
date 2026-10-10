@@ -91,7 +91,7 @@ make dist
 
 ## 版本信息
 
-- **当前版本：** <!-- CURRENT_VERSION_START -->5.6.1<!-- CURRENT_VERSION_END -->
+- **当前版本：** <!-- CURRENT_VERSION_START -->5.6.2<!-- CURRENT_VERSION_END -->
 - **状态：** 稳定版
 
 ## TODO
