@@ -76,8 +76,8 @@ public:
         };
 
         const float gapWidth      = renderer->getTextDimensions(ult::GAP_1,                          false, 23).first;
-        const float backTextWidth = renderer->getTextDimensions("\uE0E1" + ult::GAP_2 + ult::BACK,   false, 23).first;
-        const float selTextWidth  = renderer->getTextDimensions("\uE0E0" + ult::GAP_2 + ult::OK,     false, 23).first;
+        const float backTextWidth = renderer->getTextDimensions("\uE0E1" + ult::GAP_2 + i18n::text("Back"),   false, 23).first;
+        const float selTextWidth  = renderer->getTextDimensions("\uE0E0" + ult::GAP_2 + i18n::text("OK"),     false, 23).first;
 
         const float _halfGap     = gapWidth * 0.5f;
         const float _backWidth   = backTextWidth + gapWidth;
@@ -119,8 +119,8 @@ public:
 
         // --- Footer text ---
         const std::string currentBottomLine =
-            "\uE0E1" + ult::GAP_2 + ult::BACK  + ult::GAP_1 +
-            "\uE0E0" + ult::GAP_2 + ult::OK    + ult::GAP_1 +
+            "\uE0E1" + ult::GAP_2 + i18n::text("Back")  + ult::GAP_1 +
+            "\uE0E0" + ult::GAP_2 + i18n::text("OK")    + ult::GAP_1 +
             (!m_pageLeftName.empty()  ? "\uE0ED" + ult::GAP_2 + m_pageLeftName  + ult::GAP_1 :
              !m_pageRightName.empty() ? "\uE0EE" + ult::GAP_2 + m_pageRightName + ult::GAP_1 :
              "\uE0E2" + ult::GAP_2 + i18n::t(i18n::Str::Language) + ult::GAP_1);
@@ -129,7 +129,7 @@ public:
             buttonStartX, 693, 23, tsl::bottomTextColor, tsl::buttonColor);
 
         if (!selectIsUsingFocusedColor) {
-            static const std::string okOverdraw = "\uE0E0" + ult::GAP_2 + ult::OK + ult::GAP_1;
+            static const std::string okOverdraw = "\uE0E0" + ult::GAP_2 + i18n::text("OK") + ult::GAP_1;
             renderer->drawStringWithColoredSections(okOverdraw, false, tsl::s_footerSpecialChars,
                 buttonStartX + _backWidth, 693, 23, tsl::unfocusedColor, tsl::unfocusedColor);
         }
