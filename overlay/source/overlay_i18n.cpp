@@ -31,6 +31,7 @@ void reloadRyazhTuneTranslations() {
         std::string(UI_OVERRIDE_PATH),
     };
 
+    std::string loadedPkgLang;
     for (std::string base : langRoots) {
         ult::preprocessPath(base);
         if (!base.empty() && base.back() != '/')
@@ -39,6 +40,7 @@ void reloadRyazhTuneTranslations() {
         const std::string pkgLang = base + "lang/" + lang + ".json";
         if (ult::isFile(pkgLang)) {
             ult::loadTranslationsFromJSON(pkgLang);
+            loadedPkgLang = pkgLang;
             break;
         }
     }
@@ -46,6 +48,8 @@ void reloadRyazhTuneTranslations() {
     const std::string ultraLang = ult::LANG_PATH + lang + ".json";
     if (ult::isFile(ultraLang))
         ult::parseLanguage(ultraLang);
+    else if (!loadedPkgLang.empty())
+        ult::parseLanguage(loadedPkgLang);
     else
         ult::reinitializeLangVars();
 
