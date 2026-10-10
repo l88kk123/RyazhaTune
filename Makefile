@@ -1,5 +1,5 @@
 export GITHASH 		:= $(shell git -c safe.directory=$(CURDIR) rev-parse --short HEAD 2>/dev/null || echo unknown)
-export VERSION := 5.6.3
+export VERSION := 5.6.4
 export API_VERSION 	:= 8
 export WANT_FLAC 	:= 1
 export WANT_MP3 	:= 1
@@ -60,3 +60,4 @@ dist: all
 	-hactool -t nso RyazhTune/RyazhTune.nso
 
 .PHONY: all clean overlay nxExt module dist prepare-overlay-lib
+
