@@ -1,5 +1,12 @@
 {
     "OK": "確認",
+    "SUN": "日",
+    "MON": "一",
+    "TUE": "二",
+    "WED": "三",
+    "THU": "四",
+    "FRI": "五",
+    "SAT": "六",
     "OVERLAY_TITLE": "RyazhaTune 設定",
     "SHUFFLE_MODE": "隨機播放",
     "REPEAT_MODE": "重複模式",
@@ -204,3 +211,4 @@
     "10 kHz": "10 kHz",
     "A edit/B done · L/R band · ↑/↓ gain": "A 編輯/B 完成 · L/R 頻段 · ↑/↓ 增益"
 }
+
